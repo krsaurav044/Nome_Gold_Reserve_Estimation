@@ -83,82 +83,6 @@ X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.33, random
 
 
 # In[12]:
-
-
-from sklearn.svm import SVR
-import numpy as np
-
-clf = SVR(gamma='scale', C=1.0, epsilon=0.2)
-clf.fit(X_train, y_train) 
-
-
-# In[14]:
-
-
-y_pred=clf.predict(X_test)
-
-
-# In[15]:
-
-
-# finding root mean square error
-from sklearn.metrics import mean_squared_error
-
-from math import sqrt
-
-rmse = sqrt(mean_squared_error(y_test, y_pred))
-
-print(rmse)
-
-
-# In[17]:
-
-
-# finding root mean square error
-mse=mean_squared_error(y_test, y_pred)
-print(mse)
-
-
-# In[13]:
-
-
-#R^2 value
-clf.score(X_test,y_test)
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[88]:
-
-
 NN_model = Sequential()
 
 # The Input Layer :
@@ -217,8 +141,43 @@ print(NN_model.metrics_names)
 test_acc
 
 
-# In[ ]:
+from sklearn.svm import SVR
+import numpy as np
+
+clf = SVR(gamma='scale', C=1.0, epsilon=0.2)
+clf.fit(X_train, y_train) 
 
 
+# In[14]:
 
+
+y_pred=clf.predict(X_test)
+
+
+# In[15]:
+
+
+# finding root mean square error
+from sklearn.metrics import mean_squared_error
+
+from math import sqrt
+
+rmse = sqrt(mean_squared_error(y_test, y_pred))
+
+print(rmse)
+
+
+# In[17]:
+
+
+# finding root mean square error
+mse=mean_squared_error(y_test, y_pred)
+print(mse)
+
+
+# In[13]:
+
+
+#R^2 value
+clf.score(X_test,y_test)
 
